@@ -15,6 +15,10 @@ header nav {
   font-family: var(--body-font-family);
 }
 
+header nav {
+  color: green;
+}
+
 header nav a:any-link {
   color: currentcolor;
 }
