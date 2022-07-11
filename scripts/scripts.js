@@ -624,6 +624,15 @@ function buildAutoBlocks(main) {
   }
 }
 
+function decorateExternalLinks(main) {
+  Array.from(document.links).forEach((a) => {
+    const href = new URL(a.href);
+    if (href.host !== window.location.host) {
+      a.target = "_blank";
+    }
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -635,6 +644,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateExternalLinks(main);
 }
 
 /**
